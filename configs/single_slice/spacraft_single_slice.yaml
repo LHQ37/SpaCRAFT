@@ -1,0 +1,6 @@
+method: SpaCRAFT
+latent_dimension: 10
+training_seed: 1236
+clustering_seed: 1236
+training_steps: 500
+multi_slice_modules_enabled: false

@@ -1,0 +1,6 @@
+{
+  "selected_resolution": 0.25,
+  "selected_ARI": 0.40774628211546265,
+  "n_clusters": 7,
+  "tie_rule": "smaller resolution wins exact ARI ties"
+}

@@ -1,0 +1,31 @@
+method: SpaCRAFT
+dataset: e11_e18
+clusters: 16
+seed: 1234
+steps: 500
+lsi:
+  components: 30
+  drop_first: true
+banksy:
+  lambda_banksy: 0.15
+  kgeom: 10
+  agf_multiplier: 2.0
+  agf_neighbors: 20
+  mu: 1.0
+  gaussian_scale_fraction: 0.5
+  gaussian_distance_rank: 5
+graph:
+  feature_k: 15
+  spatial_weight: 0.6
+  cross_slice_edges: false
+model:
+  encoder_dimensions: [29, 50, 10]
+loss:
+  lambda_adv: 0.28
+  lambda_rec: 10.0
+  lambda_cluster_contrast: 1.1
+  contrastive_temperature: 0.5
+optimizer:
+  name: Adam
+  learning_rate: 0.00011929202947805012
+  weight_decay: 0.0

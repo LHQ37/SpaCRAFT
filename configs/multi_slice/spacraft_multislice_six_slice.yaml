@@ -1,0 +1,6 @@
+method: SpaCRAFT
+dataset: six_slices
+clusters: 11
+seed: 1234
+steps: 500
+base_config: spacraft_multislice_e11_e18.yaml

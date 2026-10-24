@@ -1,0 +1,59 @@
+project_display_name: SpaCRAFT
+project_root: .
+formal_result_root: results/single_slice/spacraft
+seed: 1234
+genome:
+  status: GENOME_BUILD_CONFIRMED
+  build: mm10
+  assembly: GRCm38
+  fasta: GENOME_RESOURCE_ROOT/genome.fa
+  gtf: GENOME_RESOURCE_ROOT/annotation/gencode.vM25.annotation.gtf
+  chrom_sizes: GENOME_RESOURCE_ROOT/genome.chrom.sizes
+  motif_database: GENOME_RESOURCE_ROOT/motifs/JASPAR2024_CORE_vertebrates_non-redundant_pfms_meme.txt
+parameters:
+  promoter_upstream_bp: 2000
+  promoter_downstream_bp: 500
+  gene_activity_upstream_bp: 2000
+  gene_activity_downstream_bp: 0
+  marker_test: snapATAC2_diff_test
+  marker_fdr: 0.05
+  marker_min_log2fc: 0.5
+  motif_background_gc_length_matched: true
+  chromvar_seed: 1234
+  gene_activity:
+    implementation: fixed_matrix_peak_to_nearest_gene
+    include_gene_body: true
+    promoter_upstream_bp: 2000
+    promoter_downstream_bp: 0
+    distal_max_distance_bp: 0
+    distance_weighting: none
+    overlapping_peak_policy: nearest_gene_only
+    normalization: library_size_10000
+    log_transform: log1p
+    smoothing: false
+  coaccessibility:
+    candidate_window_bp: 250000
+    correlation_threshold: 0.30
+    adjusted_pvalue_threshold: 0.05
+    stability_filter: fixed_cluster_support
+  pseudotime:
+    max_slices: 2
+    root_selection_policy: biological_evidence_only_no_spatial_direction
+screening:
+  formula: available_component_mean
+  formula_frozen_before_ranking: true
+  component_scaling: minmax_0_100_across_slices
+  core_components:
+    - Input_Completeness
+    - Marker_Peak_Strength
+    - Marker_Peak_Significance
+    - Heatmap_Block_Structure
+    - Gene_Activity_Specificity
+    - Gene_Activity_Spatial_MoransI
+    - Motif_Enrichment_Strength
+    - Motif_Activity_Spatial_MoransI
+    - Motif_Enrichment_Activity_Concordance
+    - Functional_Enrichment_Specificity
+  missing_component_policy: excluded_from_mean_and_reported_in_coverage
+datasets:
+  manifest: results/single_slice/spacraft/OFFICIAL_SINGLE_SLICE_RESULTS_MANIFEST.json

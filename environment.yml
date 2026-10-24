@@ -1,0 +1,37 @@
+name: spacraft
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytest
+  - pytorch=1.13
+  - pytorch-cuda=11.7
+  - numpy=1.26
+  - pandas=1.5
+  - scipy=1.12
+  - scikit-learn=1.4
+  - matplotlib=3.6
+  - seaborn
+  - pysam
+  - pyfaidx
+  - r-base
+  - r-dplyr
+  - r-tidyr
+  - r-tibble
+  - r-rcolorbrewer
+  - pip:
+      - anndata==0.10.5.post1
+      - scanpy==1.9.8
+      - episcanpy==0.4.0
+      - scib==1.1.4
+      - leidenalg==0.10.2
+      - umap-learn==0.5.5
+      - networkx==3.2.1
+      - PyYAML==6.0.1
+      - Pillow==10.2.0
+      - statsmodels==0.14.1
+      - gseapy==1.1.2
+      - snapatac2==2.6.5

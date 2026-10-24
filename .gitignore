@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.log
+.DS_Store
+
+# Large or local-only inputs and generated runs
+*.h5ad
+outputs/
+cache/
+tmp/
+
+# Local resource bundles
+resources/
+
+# Test/build and release-local artifacts
+.pytest_cache/
+*.zip
+.conda/
+.venv/
+venv/

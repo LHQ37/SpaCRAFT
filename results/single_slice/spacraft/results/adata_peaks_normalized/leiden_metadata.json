@@ -1,0 +1,11 @@
+{
+  "scanpy_version": "1.10.0",
+  "n_neighbors": 50,
+  "metric": "euclidean",
+  "random_state": 1236,
+  "umap_random_state": 1236,
+  "search_mode": "thorough",
+  "candidate_count": 17,
+  "selected_resolution": 0.4,
+  "selection_metric": "ARI"
+}

@@ -1,0 +1,16 @@
+{
+  "method": "PeakVI",
+  "dataset": "six_slices",
+  "status": "COMPLETE",
+  "seed": 1234,
+  "batch_key": "slice_id",
+  "binary_input": true,
+  "features_before": 8282,
+  "features_after": 3657,
+  "embedding_shape": [
+    17787,
+    7
+  ],
+  "dtype": "float32",
+  "runtime_seconds": 150.92056107521057
+}

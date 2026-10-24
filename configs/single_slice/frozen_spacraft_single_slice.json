@@ -1,0 +1,70 @@
+{
+  "status": "frozen_after_exact_reproduction",
+  "seed": {
+    "value": 1236,
+    "python_random": 1236,
+    "numpy": 1236,
+    "torch_cpu": 1236,
+    "torch_cuda_all": 1236,
+    "svd_random_state": 1236,
+    "leiden_random_state": 1236,
+    "umap_random_state": 1236
+  },
+  "preprocessing": {
+    "peak_alignment": "peak_sets_alignment defaults",
+    "min_cells_rate": 0.03,
+    "min_features": 1,
+    "use_fragment_count": true,
+    "fragment_transform": "ceil(X/2)",
+    "tfidf": true,
+    "tfidf_type": 2,
+    "svd_components": 20,
+    "svd_n_iter": 7,
+    "drop_first_lsi_component": true,
+    "model_input_dimension": 19
+  },
+  "graph": {
+    "feature_key": "X_lsi",
+    "feature_k": 40,
+    "feature_similarity": "cosine",
+    "spatial_method": "threshold",
+    "spatial_distance_weight": "reciprocal",
+    "rad_coef": 1.5,
+    "feature_weight": 0.18,
+    "spatial_weight": 0.82
+  },
+  "network": {
+    "effective_input_mode": "raw",
+    "encoder_dimensions": [19, 50, 10],
+    "decoder_dimensions": [10, 50, 19],
+    "discriminator_dimensions": [19, 50, 1],
+    "latent_dimension": 10,
+    "feature_dropout": 0.0,
+    "attention_dropout": 0.0,
+    "normalization": "none",
+    "BANKSY": false,
+    "projection": false
+  },
+  "loss": {
+    "lambda_adv": 0.28,
+    "lambda_rec": 6.13,
+    "lambda_cluster_contrast": 1.1,
+    "contrastive_temperature": 0.5,
+    "active": ["adversarial reconstruction generator/discriminator", "MSE reconstruction", "graph-neighborhood InfoNCE"]
+  },
+  "optimization": {
+    "optimizer": "Adam",
+    "generator_learning_rate": 0.00011929202947805012,
+    "discriminator_learning_rate": 0.00005964601473902506,
+    "weight_decay": 0.0,
+    "scheduler": "none",
+    "steps": 500
+  },
+  "evaluation": {
+    "clusterer": "Scanpy Leiden",
+    "n_neighbors": 50,
+    "metric": "euclidean",
+    "selection": "maximum ARI; exact tie chooses smaller resolution",
+    "overall": "arithmetic mean of ARI,NMI,AMI,Homogeneity,Completeness,V-measure,FMI"
+  }
+}

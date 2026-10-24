@@ -1,0 +1,23 @@
+{
+  "method": "GraphST",
+  "dataset": "e11_e18",
+  "status": "COMPLETE",
+  "seed": 1234,
+  "embedding_key": "PCA20(result.obsm['emb'])",
+  "embedding_shape": [
+    7118,
+    20
+  ],
+  "raw_graphst_representation_shape": [
+    7118,
+    3000
+  ],
+  "canonical_order_exact": true,
+  "device": "cuda:0",
+  "device_name": "NVIDIA GeForce RTX 4090",
+  "first_training_tensor_device": "cuda:0",
+  "trained_model_parameter_device": "cuda:0",
+  "initial_gpu_memory_bytes": 0,
+  "peak_gpu_memory_bytes": 1050733056,
+  "runtime_seconds": 20.51622200012207
+}
